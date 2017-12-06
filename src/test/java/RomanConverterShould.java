@@ -17,7 +17,7 @@ public class RomanConverterShould {
 
     public class RomanConverter {
         public String convert(int number) {
-            return null;
+            return "I";
         }
     }
 }
