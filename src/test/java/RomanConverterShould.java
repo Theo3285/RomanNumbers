@@ -21,6 +21,7 @@ public class RomanConverterShould {
     public class RomanConverter {
         public String convert(int number) {
             String result = "I";
+            result += "I";
             return result;
         }
     }
