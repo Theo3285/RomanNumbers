@@ -26,20 +26,19 @@ public class RomanConverterShould {
 
     public class RomanConverter {
 
-        //private String[] results = new String[]{"I","II","III"}; //Adding IV to array introduce a duplication of I
-
         private HashMap<Integer, String> results = new HashMap<Integer, String>()
         {
             {
                 put(1, "I");
-                put(2, "II");
-                put(3, "III");
                 put(4, "IV");
             }
         };
 
         public String convert(int number) {
-            return results.get(number);
+            if(results.containsKey(number)) {
+                return results.get(number);
+            }
+            return results.get(1) + convert(number - 1);
         }
     }
 }
