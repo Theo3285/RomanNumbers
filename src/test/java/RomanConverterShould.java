@@ -8,8 +8,11 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 @RunWith(JUnitParamsRunner.class)
 public class RomanConverterShould {
+
     @Test
-    @Parameters({"1, I"})
+    @Parameters({
+            "1, I",
+            "2, II"})
     public void convertNumberToRoman(int number, String expected) {
         RomanConverter romanNumeral = new RomanConverter();
         assertThat(romanNumeral.convert(number), is(expected));
@@ -17,7 +20,8 @@ public class RomanConverterShould {
 
     public class RomanConverter {
         public String convert(int number) {
-            return "I";
+            String result = "I";
+            return result;
         }
     }
 }
