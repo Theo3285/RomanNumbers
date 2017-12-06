@@ -2,7 +2,7 @@
 ## Definition
 Given a positive integer number (eg. 42) determine its Roman numeral representation as a String (eg "XLII"). You cannot write numerals like IM for 999.
 
-###Examples
+### Examples
 
 | Arabic number | Roman numeral  | Arabic number | Roman numeral  | 
 | ------------- | -------------- | ------------- | -------------- | 
@@ -28,7 +28,3 @@ Given a positive integer number (eg. 42) determine its Roman numeral representat
 |      1999     |  MCMXCIX      |       M	    |       CM     |               |               | 
 |      2008     |  MMVIII       |       MM	    |       -    |               |               |
 
-Arabic number	Roman numeral	Thousands	Cents	Tenths	Units
-846	DCCCXLVI	-	DCC	XL	VI
-1999	MCMXCIX	M	CM	XC	IX
-2008	MMVIII	MM	-	-	VIII
