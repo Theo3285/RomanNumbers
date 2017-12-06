@@ -51,15 +51,15 @@ public class RomanConverterShould {
             if (results.containsKey(number)) {
                 return results.get(number);
             }
-            if (number > 40) {
+            while (number >= 40) {
                 String result = "XL";
                 return result + convert(number - 40);
             }
-            if (number > 10) {
+            while (number >= 10) {
                 String result = "X";
                 return result + convert(number - 10);
             }
-            if (number > 5) {
+            while (number >= 5) {
                 String result = "V";
                 return result + convert(number -5);
             }
