@@ -12,7 +12,8 @@ public class RomanConverterShould {
     @Test
     @Parameters({
             "1, I",
-            "2, II"})
+            "2, II",
+            "3, III"})
     public void convertNumberToRoman(int number, String expected) {
         RomanConverter romanNumeral = new RomanConverter();
         assertThat(romanNumeral.convert(number), is(expected));
@@ -22,6 +23,9 @@ public class RomanConverterShould {
         public String convert(int number) {
             String result = "I";
             if (number > 1){
+                result += "I";
+            }
+            if (number > 2) {
                 result += "I";
             }
             return result;
