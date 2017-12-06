@@ -23,7 +23,11 @@ public class RomanConverterShould {
                     "5, V",
                     "6, VI",
                     "7, VII",
-                    "8, VIII"
+                    "8, VIII",
+                    "9, IX",
+                    "10, X",
+                    "40, XL",
+                    "44, XLIV"
             })
     public void convertNumberToRoman(int number, String expected) {
         RomanConverter romanNumeral = new RomanConverter();
@@ -37,12 +41,23 @@ public class RomanConverterShould {
                 put(1, "I");
                 put(4, "IV");
                 put(5, "V");
+                put(9, "IX");
+                put(10, "X");
+                put(40, "XL");
             }
         };
 
         public String convert(int number) {
             if (results.containsKey(number)) {
                 return results.get(number);
+            }
+            if (number > 40) {
+                String result = "XL";
+                return result + convert(number - 40);
+            }
+            if (number > 10) {
+                String result = "X";
+                return result + convert(number - 10);
             }
             if (number > 5) {
                 String result = "V";
