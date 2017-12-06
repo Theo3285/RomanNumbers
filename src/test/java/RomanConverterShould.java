@@ -37,15 +37,16 @@ public class RomanConverterShould {
                 put(1, "I");
                 put(4, "IV");
                 put(5, "V");
-                put(6, "VI");
-                put(7, "VII");
-                put(8, "VIII"); // more duplicated I
             }
         };
 
         public String convert(int number) {
             if (results.containsKey(number)) {
                 return results.get(number);
+            }
+            if (number > 5) {
+                String result = "V";
+                return result + convert(number -5);
             }
             return results.get(1) + convert(number - 1);
         }
