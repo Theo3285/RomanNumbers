@@ -3,9 +3,7 @@ import junitparams.Parameters;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.LinkedList;
+import java.util.*;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -36,18 +34,19 @@ public class RomanConverterShould {
 
     public class RomanConverter {
 
-        private HashMap<Integer, String> results = new HashMap<Integer, String>() {
+        private Map<Integer, String> results = new HashMap<Integer, String>() {
             {
-                put(1, "I");
-                put(4, "IV");
-                put(5, "V");
-                put(9, "IX");
-                put(10, "X");
                 put(40, "XL");
+                put(10, "X");
+                put(9, "IX");
+                put(5, "V");
+                put(4, "IV");
+                put(1, "I");
             }
         };
 
         public String convert(int number) {
+
             if (results.containsKey(number)) {
                 return results.get(number);
             }
