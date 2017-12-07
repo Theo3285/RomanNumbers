@@ -34,7 +34,7 @@ public class RomanConverterShould {
 
     public class RomanConverter {
 
-        private Map<Integer, String> results = new HashMap<Integer, String>() {
+        private Map<Integer, String> results = new LinkedHashMap<Integer, String>() {
             {
                 put(40, "XL");
                 put(10, "X");
@@ -46,23 +46,16 @@ public class RomanConverterShould {
         };
 
         public String convert(int number) {
-
-            if (results.containsKey(number)) {
-                return results.get(number);
+            String result = "";
+            Iterator<Map.Entry<Integer, String>> iterator = results.entrySet().iterator();
+            while (iterator.hasNext()) {
+                Map.Entry<Integer, String> entry = iterator.next();
+                while (number >= entry.getKey()) {
+                    result += entry.getValue();
+                    number -= entry.getKey();
+                }
             }
-            while (number >= 40) {
-                String result = "XL";
-                return result + convert(number - 40);
-            }
-            while (number >= 10) {
-                String result = "X";
-                return result + convert(number - 10);
-            }
-            while (number >= 5) {
-                String result = "V";
-                return result + convert(number -5);
-            }
-            return results.get(1) + convert(number - 1);
+            return result;
         }
     }
 }
